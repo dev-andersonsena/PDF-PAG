@@ -1,0 +1,150 @@
+/* css3 syntax - no preprocessor */
+
+html, body {
+	background-color: #f9f6f6;
+	  margin: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: hidden;
+  }
+  
+  .container {
+	background-color: #21659f;
+	  position: relative;
+	  width: 60px;
+	  height: 100vh;
+	  float: left;
+	transition: width .3s;
+  }
+  .container.open {
+	width: 100vw;
+  }
+	
+  .closeburger {
+		  position: absolute;
+		  top: 20px;
+		  left: 10px;
+	  height: 30px;
+	  width: 30px;
+		cursor: pointer;
+  }
+  
+  .middleburger, 
+  .closeburger:before, 
+  .closeburger:after {
+	position: absolute;
+	width: 30px;
+	height: 3px;
+	background-color: #eee;
+	border-radius: 1px;
+  }
+  
+  .middleburger {
+	top: 50%;
+	margin-top: -2px;
+	transition: transform ease (500ms);
+  }
+  
+  .closeburger:before {
+	content: '';
+	top: 5px;
+	transition: top 500ms ease 500ms, transform 500ms ease;
+  }
+  
+  .closeburger:after {
+	content: '';
+	bottom: 6px;
+	transition: bottom 500ms ease 500ms, transform 500ms ease;
+  }
+  
+  .open .closeburger .middleburger {
+	transform: rotate(225deg);
+	transition: transform 500ms ease 500ms;
+  }
+  
+  .open .closeburger:before {
+	top: 13px;
+	transform: rotate(225deg);
+	transition: top 500ms ease, transform 500ms ease 500ms;
+  }
+  
+  .open .closeburger:after {
+	bottom: 14px;
+	transform: rotate(-225deg);
+	transition: bottom 500ms ease, transform 500ms ease 500ms;
+  }
+/* Estilo para h2 */
+/* Estilos gerais */
+
+
+  
+  /* Estilos do título */
+  
+  h2 {
+	color: #191919;
+	margin-left: 178px;
+  }
+  
+  /* Estilos do formulário */
+  
+  form {
+	display: block; /* Remove o estilo display: inline-block; */
+	text-align: center; /* Muda o alinhamento do texto do formulário para o centro */
+  }
+  
+  /* Estilos dos elementos do formulário */
+  
+  label, input {
+	display: inline-block; /* Remove o estilo display: block; */
+	 /* Remove a margem inferior dos elementos */
+	 margin: 25px;
+  }
+  button {
+	margin: 30px;
+	margin-left: 193px;
+	background-color: #21659f;
+	color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(68, 31, 218, 0.2);
+	border-radius: 20px;
+
+  }
+  /* Estilos específicos do seu código */
+  
+
+  
+/* Estilo para label */
+
+/* Estilos gerais */
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+  }
+  
+  /* Estilos da janela de upload de PDF */
+  .upload-pdf {
+	width: 500px;
+	height: 300px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+  }
+  
+  .upload-pdf .title {
+	/* Centraliza o título da janela */
+	text-align: center;
+	/* Altera o tamanho da fonte do título */
+	font-size: 24px;
+  }
+  
+  .upload-pdf .file-upload {
+	/* Centraliza o texto de nenhum arquivo escolhido */
+	text-align: center;
+	/* Altera a posição do texto de nenhum arquivo escolhido */
+	margin-top: 10px;
+  }
+  
+  .upload-pdf .button {
+	/* Centraliza o botão de contar páginas */
+	margin: 0 auto;
+  }
+  
+ 

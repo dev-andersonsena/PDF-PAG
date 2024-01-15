@@ -1,0 +1,48 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/style21.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'js/SplitText3.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+   
+    
+
+
+   
+   
+</head>
+<body>
+{% block content %}
+
+    <div id="green-filter"></div>
+<div id="top-gradient" class="gradient"></div>
+<div id="bottom-gradient" class="gradient"></div>
+<div id="logo-wrapper">
+  <div id="logo">
+    <div id="logo-border" class="absolute-centered"></div>
+    <div id="logo-border-inner" class="absolute-centered"></div>
+    <div id="logo-text">
+      <div id="hulu-text" class="zen-dots-font">PDF</div>
+      <div id="originals-text" class="jakarta-sans-font">Calculo</div>
+      {% endblock content %}
+    </div>
+  </div>
+</div>
+
+<a href="{% url 'upload_pdf' %}" id="restart-button" class="bubbly-button">Clique aqui</a>
+
+
+
+
+<script src="{% static 'js/renderv2.js' %}"></script>
+</body>
+</html>

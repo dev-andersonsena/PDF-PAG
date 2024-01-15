@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Upload PDF</title>
+    <link href="{% static 'css/page2/button.css' %}" rel="stylesheet">
+    <script src="{% static 'js/page2/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/page2/sbutton.js' %}"></script>
+
+
+   
+
+   
+
+
+  
+</head>
+<body>
+    <!-- Hamburger to Close -->
+<div class="container">
+	<div class="closeburger">
+		<div class="middleburger"></div>
+	</div>
+</div>
+
+
+<div class="upload-pdf">
+    <h2 class="center">Upload PDF</h2>
+    <div class="file-upload">
+      <label for="id_pdf_file">Selecione os arquivos</label>
+      <input type="file" name="pdf_file" id="id_pdf_file" multiple>
+    </div>
+   
+    <button type="button" onclick="countPages()">Contar Páginas</button>
+  </div>
+  
+    <script>
+        function countPages() {
+            var files = document.getElementById('id_pdf_file').files;
+            var formData = new FormData();
+
+            for (var i = 0; i < files.length; i++) {
+                formData.append('pdf_files', files[i]);
+            }
+
+            $.ajax({
+                url: '/count_pages/',  // Substitua pelo URL da sua view Django
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert('Número total de páginas: ' + response.total_pages);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    
+    </script>
+  
+
+    
+    
+
+
+</body>
+</html>
